@@ -1,10 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// In App.js in a new project
 
-export default function App() {
+import * as React from 'react';
+import { View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from './screens/HomeScreen';
+import SignupScreen from './screens/SignupScreen';
+
+const Stack = createNativeStackNavigator();
+
+function App() {
+
+
   return (
-    <View>
-      <Text className="text-4xl text-center text-red-500">Open up App.js to start working on your app!</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Signup" component={SignupScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
+
+export default App;
