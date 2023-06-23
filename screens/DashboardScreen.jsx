@@ -1,14 +1,13 @@
 import { SafeAreaView,ScrollView, View, Image, Text } from "react-native";
 import React from "react";
 import Header from "../components/Header";
-import Ionicons from '@expo/vector-icons/Ionicons';
+import Footer from "../components/Footer";
 
 const DashboardScreen = () => {
   return (
-    <SafeAreaView className="">
+    <SafeAreaView className="bg-[#006156] pt-7 h-screen">
       <Header />
-      <Ionicons name="arrow-back-outline" size={32} color="" />
-
+      <Footer />
     </SafeAreaView>
   );
 };
