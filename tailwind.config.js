@@ -4,7 +4,11 @@ module.exports = {
   "./screens/**/*.{js,jsx,ts,tsx}",
   "./components/**/*.{js,jsx,ts,tsx}",],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        'background':'#227E74'
+      }
+    },
   },
   plugins: [],
 }

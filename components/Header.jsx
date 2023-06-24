@@ -4,7 +4,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 
 const Header = () => {
   return (
-    <View className="bg-[#006156] w-full p-5 flex-row justify-between">
+    <View className="bg-transparent w-full p-5 flex-row justify-between">
       <View className="flex-row justify-center items-center gap-x-4">
         <Image
           source={require("../assets/logo.png")}

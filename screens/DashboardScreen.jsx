@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 
 const DashboardScreen = () => {
   return (
-    <SafeAreaView className="bg-[#006156] pt-7 h-screen">
+    <SafeAreaView className="bg-[#006156] pt-7 h-screen pb-0">
       <Header />
       <Footer />
     </SafeAreaView>
