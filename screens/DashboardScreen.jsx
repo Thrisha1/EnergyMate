@@ -44,43 +44,47 @@ const DashboardScreen = () => {
 
   return (
     <>
-      <SafeAreaView className="bg-[#006156] pt-7 h-screen flex-1">
+      <SafeAreaView className="bg-[#4C7380] pt-7 h-screen flex-1">
         <Image
           source={require("../assets/Frame.png")}
           className="absolute h-80"
         />
-        <Header />
-        <View className="bg-[#227E74] h-40 justify-around opacity-75 rounded-xl mx-5">
-          <View className="flex-row">
+        <Header heading="Energy Mate" />
+        <View className="bg-[#D8E4E8] h-40 justify-around opacity-75 rounded-xl mx-5">
+        <Image
+          source={require("../assets/welcome.png")}
+          className="mx-6"
+        />
+          <View className="flex-row bg-[#e0e4e3] mx-5 py-2 rounded-xl">
             <View className="flex-1">
-              <Text className="text-white text-xl text-center">
+              <Text className="text-[#404040] text-xl text-center">
                 Your Total Bill
               </Text>
-              <Text className="text-white text-xl text-center">₹ 5000,000</Text>
+              <Text className="text-[#404040] text-xl text-center">₹ 5000,000</Text>
             </View>
             <View className="flex-1">
-              <Text className="text-white text-xl text-center">
-                Your Total Bill
+              <Text className="text-[#404040] text-xl text-center">
+                Units Used
               </Text>
-              <Text className="text-white text-xl text-center">₹ 5000,000</Text>
+              <Text className="text-[#404040] text-xl text-center">500</Text>
             </View>
           </View>
-          <TouchableOpacity className=" items-center flex-row justify-center">
-            <Text className="bg-white py-2 px-3 rounded-xl text-[#227E74] text-lg font-black text-center flex-row items-center justify-center">
+          {/* <TouchableOpacity className=" items-center flex-row justify-center">
+            <Text className="bg-white py-2 px-3 rounded-xl text-[#4C7380] text-lg font-black text-center flex-row items-center justify-center">
               View for Individual Devices{" "}
               <View className="flex-row items-center justify-center w-full">
-                <Ionicons name="arrow-forward" size={25} color="#227E74" />
+                <Ionicons name="arrow-forward" size={25} color="#4C7380" />
               </View>{" "}
             </Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
-        <View className="mx-5">
+        <View className="my-7 px-6">
           <Image
-            source={require("../assets/chart.png")}
-            className=" self-center my-3 w-full rounded-xl"
+            source={require("../assets/graph.png")}
+            className=""
           />
         </View>
-        <View className="bg-[#227E74] h-40 opacity-75 rounded-xl items-center flex flex-col justify-center mx-5 p-7">
+        <View className="bg-[#76929b] h-40 opacity-75 rounded-xl items-center flex flex-col justify-center mx-5 p-7">
           <View className="flex-row justify-center items-center">
             <Image
               source={require("../assets/bulb.png")}
@@ -88,7 +92,7 @@ const DashboardScreen = () => {
             />
             <View className=" flex-1">
               <Text className="text-white text-2xl font-bold text-center">
-                How to reduce Power Consuption !
+                How To Reduce Power Consumption !
               </Text>
             </View>
           </View>
