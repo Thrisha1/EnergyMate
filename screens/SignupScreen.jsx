@@ -1,7 +1,6 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image,TouchableOpacity } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import React from 'react'
-import { TouchableOpacity } from 'react-native-gesture-handler'
 import { useNavigation } from "@react-navigation/native"
 
 const Signup = () => {
