@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 const DeviceDetailsScreen = ({ route }) => {
   const { name, image, power, place } = route.params;
 
-  const [isEnabled, setIsEnabled] = useState(false);
+  const [isEnabled, setIsEnabled] = useState(true);
 
   const toggleSwitch = () => {
     setIsEnabled((previousState) => !previousState);
@@ -25,7 +25,7 @@ const DeviceDetailsScreen = ({ route }) => {
         <Text className="text-xl text-white">{place}</Text>
         <View className="self-start" >
           <Switch
-            trackColor={{ false: "#767577", true: "#81b0ff" }}
+            trackColor={{  true: "#81b0ff" ,false: "#767577"}}
             thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
             ios_backgroundColor="#3e3e3e"
             onValueChange={toggleSwitch}
