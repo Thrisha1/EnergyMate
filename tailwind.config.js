@@ -10,7 +10,7 @@ module.exports = {
         'em-gray-light': '#DADADA',
         'em-green-dark': '#006156',
         'em-gray': '#979AA5',
-        'em-green-light':'#227E74'
+        'em-background-light':'#4C7380'
       },
     },
   },
