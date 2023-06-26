@@ -44,7 +44,7 @@ const DashboardScreen = () => {
 
   return (
     <>
-      <SafeAreaView className="bg-[#4C7380] pt-7 h-screen flex-1">
+      <ScrollView className="bg-[#4C7380] pt-7 h-screen flex-1 mb-16">
         <Image
           source={require("../assets/Frame.png")}
           className="absolute h-80"
@@ -135,7 +135,7 @@ const DashboardScreen = () => {
         </View>
 
         {/* <Chart data={data} labels={labels} /> */}
-      </SafeAreaView>
+      </ScrollView>
       <Footer />
     </>
   );
