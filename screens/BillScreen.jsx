@@ -13,6 +13,7 @@ import Footer from "../components/Footer";
 import Device from "../components/Device";
 
 const BillScreen = () => {
+
   return (
     <>
     <View className="pt-7 bg-[#4C7380] ">

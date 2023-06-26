@@ -117,14 +117,14 @@ const DashboardScreen = () => {
           <View className="h-36 justify-between py-3 shadow-2xl">
             <TouchableOpacity className="w-full shadow-xl bg-white py-3 rounded-xl px-3 flex-row">
               <Ionicons name="today" size={24}></Ionicons>
-              <Text className=" text-xl font-bold px-4">Manage Devices</Text>
+              <Text className=" text-lg font-bold px-4">Manage Devices</Text>
               <View className="self-start pl-28">
                 <Ionicons name="play" size={24}></Ionicons>
               </View>
             </TouchableOpacity>
             <TouchableOpacity onPress={()=>navigation.navigate("Bill")} className="w-full shadow-xl bg-white py-3 rounded-xl px-3 flex-row">
               <Ionicons name="today" size={24}></Ionicons>
-              <Text className=" text-xl font-bold px-4">
+              <Text className=" text-lg font-bold px-4">
                 View Individual Devices
               </Text>
               <View className="self-start pl-14">
