@@ -19,9 +19,9 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="AvailableDevices" component={AvailableDevicesScreen}/>
         <Stack.Screen name="Signup" component={SignupScreen} />
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="AvailableDevices" component={AvailableDevicesScreen}/>
+        {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
         <Stack.Screen name="Dashboard" component={DashboardScreen}  />
         <Stack.Screen name="Bill" component={BillScreen} />
         <Stack.Screen name="DeviceDetails" component={DeviceDetailsScreen} />

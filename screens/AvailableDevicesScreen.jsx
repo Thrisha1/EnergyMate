@@ -7,24 +7,23 @@ import DevicePreview from '../components/DevicePreview'
 
 const AvailableDevicesScreen = () => {
   return (
-    <View className="flex-1">
+    <>
+    <View className=" pt-7 bg-[#4C7380]">
         <Header  heading="Available Devices"/>
-        <ScrollView>
+    </View>
+    <View className="h-full">
+    <ScrollView >
             <DevicePreview name="washing machine" voltage={220}/>
-            <DevicePreview name="washing machine" voltage={220}/>
-            <DevicePreview name="washing machine" voltage={220}/>
-            <DevicePreview name="washing machine" voltage={220}/>
-            <DevicePreview name="washing machine" voltage={220}/>
-            <DevicePreview name="washing machine" voltage={220}/>
-            <DevicePreview name="washing machine" voltage={220}/>
-            <DevicePreview name="washing machine" voltage={220}/>
-            <DevicePreview name="washing machine" voltage={220}/>
-            <DevicePreview name="washing machine" voltage={220}/>
-            <DevicePreview name="washing machine" voltage={220}/>
+            <DevicePreview name="Television" voltage={220}/>
+            <DevicePreview name="Smart Lamp" voltage={220}/>
+            <DevicePreview name="Air Conditioner" voltage={220}/>
+            <DevicePreview name="Speaker" voltage={220}/>
+            <DevicePreview name="Microwave Oven" voltage={220}/>
             <DevicePreview name="washing machine" voltage={220}/>
         </ScrollView>
-        <Footer/>
     </View>
+    <Footer/>
+    </>
   )
 }
 

@@ -115,7 +115,7 @@ const DashboardScreen = () => {
         <View className="bg-[#efeeee] h-2/5 w-full my-5 rounded-t-3xl p-5">
           <Text className=" text-2xl font-bold ">Quick Actions</Text>
           <View className="h-36 justify-between py-3 shadow-2xl">
-            <TouchableOpacity className="w-full shadow-xl bg-white py-3 rounded-xl px-3 flex-row">
+            <TouchableOpacity onPress={()=>navigation.navigate("AvailableDevices")} className="w-full shadow-xl bg-white py-3 rounded-xl px-3 flex-row">
               <Ionicons name="today" size={24}></Ionicons>
               <Text className=" text-lg font-bold px-4">Manage Devices</Text>
               <View className="self-start pl-28">

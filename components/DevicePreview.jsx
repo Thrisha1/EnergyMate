@@ -1,23 +1,27 @@
-import React from 'react';
-import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
-import Ionicons from '@expo/vector-icons/Ionicons';
+import React from "react";
+import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
-const DevicePreview = ({name,voltage}) => {
-    return (
-        <View className="bg-em-green-light rounded-lg m-2 p-3 flex-row justify-between">
-            <View>
-                <Text className="text-white text-2xl uppercase">{name}</Text>
-                <Text className="text-white text-xl">{voltage} volts</Text>
-            </View>
-            <TouchableOpacity className="bg-[#FF5757] flex justify-center items-center p-4 rounded-lg">
-                <Text className="text-white text-3xl m-0">
-                    <Ionicons name="trash-outline" size={30}></Ionicons>
-                </Text>
-            </TouchableOpacity>
+const DevicePreview = ({ name, voltage, image }) => {
+  return (
+    <View className="h-28 my-3 mx-5 flex-row bg-[#D8E4E8] justify-between items-center px-5 rounded-xl">
+      <View className="flex-row items-center space-x-5 ">
+        {/* <Image source={image} className="" /> */}
+        <View className="flex-col ">
+          <Text className="text-2xl font-bold">{name}</Text>
+          <Text className="text-xl">{voltage} volts</Text>
+          <Text className="text-sm text-[#5e5e5e]">8 Units | 12 jam</Text>
         </View>
-    );
-}
+      </View>
+      <TouchableOpacity className="flex justify-center items-center rounded-lg">
+        <Text className=" text-3xl m-0">
+          <Ionicons name="trash-outline" size={30}></Ionicons>
+        </Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
 
 export default DevicePreview;
