@@ -27,7 +27,6 @@ const RegisterDevice = () => {
 
   return (
     <>
-       
       <ScrollView className="bg-[#4C7380] pt-7 flex-1 px-5">
         <Image
           source={require("../assets/Frame.png")}
@@ -62,13 +61,15 @@ const RegisterDevice = () => {
         </View>
       </ScrollView>
       <Footer />
+
+
       <Modal
         animationType="fade"
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => setModalVisible(false)}
       >
-        <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: "rgba(0, 0, 0, 0.5)" }}>
           <View style={{ backgroundColor: "white", padding: 40, borderRadius: 10 }}>
             <Text style={{ fontSize: 20, fontWeight: "bold", marginBottom: 10 }}>
               Device Registered Successfully
