@@ -46,7 +46,7 @@ const DashboardScreen = () => {
 
   return (
     <>
-      <SafeAreaView className="bg-[#4C7380] pt-7 h-screen flex-1">
+      <SafeAreaView className="bg-[#4C7380]  flex-1">
         <Image
           source={require("../assets/Frame.png")}
           className="absolute h-80"

@@ -18,9 +18,9 @@ const Signup = () => {
       <TouchableOpacity onPress={()=>{
         navigation.navigate("Dashboard")
         console.log("button pressed")
-        }} className="bg-white h-[75px] w-[316px] rounded-3xl mt-8 flex-row justify-center items-center px-2 shadow-2xl m-0">
-        <Image className="mr-2" source={require("../assets/googleicon.png")}/>
-        <Text className="text-[24px]">Sign in with Google</Text>
+        }} className="bg-white h-[55px] w-[316px] rounded-3xl mt-8 flex-row justify-center items-center px-2 shadow-2xl m-0">
+        <Image className="mr-2 w-8 h-8" source={require("../assets/googleicon.png")}/>
+        <Text className="text-[20px]">Sign in with Google</Text>
       </TouchableOpacity>
     </SafeAreaView>
   )
