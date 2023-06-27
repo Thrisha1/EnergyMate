@@ -10,6 +10,7 @@ import DashboardScreen from './screens/DashboardScreen';
 import BillScreen from './screens/BillScreen';
 import AvailableDevicesScreen from './screens/AvailableDevicesScreen';
 import DeviceDetailsScreen from './screens/DeviceDetailsScreen';
+import RegisterDevicesScreen from './screens/RegisterDevicesScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +26,7 @@ function App() {
         <Stack.Screen name="Dashboard" component={DashboardScreen}  />
         <Stack.Screen name="Bill" component={BillScreen} />
         <Stack.Screen name="DeviceDetails" component={DeviceDetailsScreen} />
+        <Stack.Screen name="RegisterDevices" component={RegisterDevicesScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
