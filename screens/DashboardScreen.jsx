@@ -12,7 +12,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
-import {useDispatch, useSelector} from 'react-redux'
+// import {useDispatch, useSelector} from 'react-redux'
 
 const DashboardScreen = () => {
   const longText =
@@ -21,8 +21,8 @@ const DashboardScreen = () => {
   const scrollViewRef = useRef(null);
   const scrollDuration = 350000; // Adjust the duration for controlling the speed
   const navigation = useNavigation();
-  const dispatch = useDispatch()
-  const {total_bill, power_consumption} = useSelector(state => state.dashboard)
+  // const dispatch = useDispatch()
+  // const {total_bill, power_consumption} = useSelector(state => state.dashboard)
 
   useEffect(() => {
     const textWidth = longText.length * 8; // Adjust the width calculation based on your text styling
