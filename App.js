@@ -8,11 +8,11 @@ import HomeScreen from './screens/HomeScreen';
 import SignupScreen from './screens/SignupScreen';
 import DashboardScreen from './screens/DashboardScreen';
 import BillScreen from './screens/BillScreen';
+import RegisterDevice from './screens/RegisterDevice';
 
 const Stack = createNativeStackNavigator();
 
 function App() {
-
 
   return (
     <NavigationContainer>
@@ -21,6 +21,7 @@ function App() {
         <Stack.Screen name="Signup" component={SignupScreen} /> */}
         <Stack.Screen name="Dashboard" component={DashboardScreen}  />
         <Stack.Screen name="Bill" component={BillScreen} />
+        <Stack.Screen name="RegisterDevice" component={RegisterDevice}  />
       </Stack.Navigator>
     </NavigationContainer>
   );
