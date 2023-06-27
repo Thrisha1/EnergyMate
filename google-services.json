@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "513762154052",
+    "project_id": "energymate-c1dfd",
+    "storage_bucket": "energymate-c1dfd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:513762154052:android:1b84c3c1711ff25756ce11",
+        "android_client_info": {
+          "package_name": "com.pavan_s.energymate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "513762154052-5dfntcpvksk1otaqct7ubp9skdcnen2f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pavan_s.energymate",
+            "certificate_hash": "4315ef2b2b21c6156af931485cebbc7cbeeae22e"
+          }
+        },
+        {
+          "client_id": "513762154052-tu6amtknc58msgg6s1kajjq6u2fl96fr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pavan_s.energymate",
+            "certificate_hash": "8db786222f8faf82b20a490ea9806787676bfdef"
+          }
+        },
+        {
+          "client_id": "513762154052-mvseuknbh8uk1o8fs8mpfebac00m2qus.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALYKkICaNQMrnHOHdZ1v8lrlKcfZQvzxI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "513762154052-mvseuknbh8uk1o8fs8mpfebac00m2qus.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
