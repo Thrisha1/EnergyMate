@@ -36,8 +36,8 @@ const RegisterDevice = () => {
                     <Text className="text-white text-xl font-semibold ">No of Devices</Text>
                     <TextInput keyboardType="numeric" className="bg-white rounded-lg px-2 py-2 w-full" />
                 </View>
-                <View className="w-full flex-row justify-center">
-                    <TouchableOpacity className="w-1/3 my-2 space-y-2 rounded-xl bg-white py-2 flex-row items-center justify-center">
+                <View className="w-full flex-row justify-center mt-4">
+                    <TouchableOpacity className="w-1/3 my-2 space-y-2 rounded-xl bg-white py-3 flex-row items-center justify-center">
                         <Text className="text-[#4C7388] font-bold">
                             Register
                         </Text>
