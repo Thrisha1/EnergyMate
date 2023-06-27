@@ -1,11 +1,8 @@
 import {
-  SafeAreaView,
-  TouchableOpacity,
   ScrollView,
   View,
   Image,
   Text,
-  Animated,
   TextInput,
   Button,
 } from "react-native";
@@ -16,32 +13,6 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
 
 const RegisterDevice = () => {
-  const longText =
-    "Small changes today, brighter future tomorrow. Save electricity, save the world.".repeat(50);
-  const scrollX = useRef(new Animated.Value(0)).current;
-  const scrollViewRef = useRef(null);
-  const scrollDuration = 350000; // Adjust the duration for controlling the speed
-  const navigation = useNavigation();
-
-  useEffect(() => {
-    const textWidth = longText.length * 8; // Adjust the width calculation based on your text styling
-    const containerWidth = 100; // Adjust the container width based on your layout
-
-    const startScroll = () => {
-      scrollX.setValue(-containerWidth);
-      Animated.timing(scrollX, {
-        toValue: textWidth,
-        duration: scrollDuration,
-        useNativeDriver: true,
-      }).start(({ finished }) => {
-        if (finished) {
-          startScroll(); // Restart the scroll once it reaches the end
-        }
-      });
-    };
-
-    startScroll();
-  }, []);
 
   return (
     <>
