@@ -11,9 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -21,10 +19,14 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.energymate.app",
+      "expoClientId": "558838348481-a4f11epc4qpnoff3m8r2te5uuhrk81li.apps.googleusercontent.com"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/favicon.png",
+      "expoClientId": "558838348481-okn12mo9ibb8p7vngr0vjpihirbocdv6.apps.googleusercontent.com"
+    },
+    "scheme" : "energymate"
   }
 }

@@ -14,7 +14,9 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
 // import {useDispatch, useSelector} from 'react-redux'
 
-const DashboardScreen = () => {
+const DashboardScreen = ({ route }) => {
+  // const { user } = route.params;
+  // const username = user?.name; 
   const longText =
     "Small changes today, brighter future tomorrow. Save electricity, save the world.".repeat(50);
   const scrollX = useRef(new Animated.Value(0)).current;
@@ -59,6 +61,7 @@ const DashboardScreen = () => {
         />
           <View className="flex-row bg-[#e0e4e3] mx-5 py-2 rounded-xl">
             <View className="flex-1">
+              <Text className="text-[#404040] text-xl text-center">username</Text>
               <Text className="text-[#404040] text-xl text-center">
                 Your Total Bill
               </Text>
