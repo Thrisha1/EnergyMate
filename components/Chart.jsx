@@ -1,6 +1,5 @@
 import React from 'react';
 import { View } from 'react-native';
-import { LineChart, Grid } from 'react-native-svg-charts';
 import * as shape from 'd3-shape';
 
 const Chart = ({ data, labels }) => {

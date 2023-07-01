@@ -10,9 +10,9 @@ import {
 import React, { useEffect, useRef } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Chart from "../components/Chart";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
+// import {useDispatch, useSelector} from 'react-redux'
 
 const DashboardScreen = () => {
   const longText =
@@ -21,6 +21,8 @@ const DashboardScreen = () => {
   const scrollViewRef = useRef(null);
   const scrollDuration = 350000; // Adjust the duration for controlling the speed
   const navigation = useNavigation();
+  // const dispatch = useDispatch()
+  // const {total_bill, power_consumption} = useSelector(state => state.dashboard)
 
   useEffect(() => {
     const textWidth = longText.length * 8; // Adjust the width calculation based on your text styling
@@ -44,7 +46,7 @@ const DashboardScreen = () => {
 
   return (
     <>
-      <SafeAreaView className="bg-[#4C7380] pt-7 h-screen flex-1">
+      <SafeAreaView className="bg-[#4C7380]  flex-1">
         <Image
           source={require("../assets/Frame.png")}
           className="absolute h-80"
@@ -60,7 +62,7 @@ const DashboardScreen = () => {
               <Text className="text-[#404040] text-xl text-center">
                 Your Total Bill
               </Text>
-              <Text className="text-[#404040] text-xl text-center">₹ 5000,000</Text>
+              <Text className="text-[#404040] text-xl text-center">₹ 5000</Text>
             </View>
             <View className="flex-1">
               <Text className="text-[#404040] text-xl text-center">
@@ -115,16 +117,16 @@ const DashboardScreen = () => {
         <View className="bg-[#efeeee] h-2/5 w-full my-5 rounded-t-3xl p-5">
           <Text className=" text-2xl font-bold ">Quick Actions</Text>
           <View className="h-36 justify-between py-3 shadow-2xl">
-            <TouchableOpacity className="w-full shadow-xl bg-white py-3 rounded-xl px-3 flex-row">
+            <TouchableOpacity onPress={()=>navigation.navigate("AvailableDevices")} className="w-full shadow-xl bg-white py-3 rounded-xl px-3 flex-row">
               <Ionicons name="today" size={24}></Ionicons>
-              <Text className=" text-xl font-bold px-4">Manage Devices</Text>
+              <Text className=" text-lg font-bold px-4">Manage Devices</Text>
               <View className="self-start pl-28">
                 <Ionicons name="play" size={24}></Ionicons>
               </View>
             </TouchableOpacity>
             <TouchableOpacity onPress={()=>navigation.navigate("Bill")} className="w-full shadow-xl bg-white py-3 rounded-xl px-3 flex-row">
               <Ionicons name="today" size={24}></Ionicons>
-              <Text className=" text-xl font-bold px-4">
+              <Text className=" text-lg font-bold px-4">
                 View Individual Devices
               </Text>
               <View className="self-start pl-14">
