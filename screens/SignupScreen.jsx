@@ -1,28 +1,45 @@
-import { View, Text, Image,TouchableOpacity } from 'react-native'
+import React, { useState } from 'react';
 import {
-  SafeAreaView
-} from "react-native";
-import React from 'react'
-import { useNavigation } from "@react-navigation/native"
+  View,
+  ScrollView,
+  Text,
+  Image,
+  TouchableOpacity,
+  TextInput,
+} from 'react-native';
+import { SafeAreaView } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import Signin from '../components/SignIn.jsx';
+import SignupComp from '../components/Signup.jsx';
 
 const Signup = () => {
+  const [email, setemail] = useState('');
+  const [pswd, setpswd] = useState('');
+  const [switcher, setswitcher] = useState(false);
   const navigation = useNavigation();
+
   return (
-    <SafeAreaView className="bg-[#4C7380] h-screen mb-0 flex-1 justify-between py-48 items-center">
-      <View className="flex items-center">
-        <Image
-          source={require("../assets/energymatelogo.png")}
-        />
-        <Text className="text-[24px] text-white">EnergyMate</Text>
-      </View>
-      <TouchableOpacity onPress={()=>{
-        navigation.navigate("Dashboard")
-        console.log("button pressed")
-        }} className="bg-white h-[55px] w-[316px] rounded-3xl mt-8 flex-row justify-center items-center px-2 shadow-2xl m-0">
-        <Image className="mr-2 w-8 h-8" source={require("../assets/googleicon.png")}/>
-        <Text className="text-[20px]">Sign in with Google</Text>
-      </TouchableOpacity>
-    </SafeAreaView>
-  )
-}
-export default Signup
+    <ScrollView>
+      <SafeAreaView className="bg-[#4C7380] h-screen mb-0 w-full justify-between py-24 items-center">
+        <View className="flex items-center">
+          <Image source={require('../assets/energymatelogo.png')} />
+          <Text className="text-[24px] text-white">EnergyMate</Text>
+        </View>
+        {
+          switcher ? <SignupComp /> : <Signin />
+        }
+        
+        <TouchableOpacity onPress={()=>setswitcher(!switcher)} >
+          {
+            switcher ? <Text className="text-center text-blue-200 ">Already have an account? Signin</Text> : <Text className="text-center text-blue-200 ">New User? Signup</Text>
+          }
+          
+        </TouchableOpacity>
+       
+       
+      </SafeAreaView>
+    </ScrollView>
+  );
+};
+
+export default Signup;
