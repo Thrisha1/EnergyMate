@@ -1,11 +1,31 @@
-import React from 'react';
-import { View, Text, Image, StatusBar, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import Logo from '../assets/logo.png';
+import React, { useEffect, useLayoutEffect } from "react";
+import { View, Text, Image, StatusBar, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import Logo from "../assets/logo.png";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const SplashScreen = () => {
-
   const navigation = useNavigation();
+
+  useEffect(() => {
+    async function getData() {
+      try {
+        const value = await AsyncStorage.getItem("my-key");
+        if (value !== null) {
+          const user = JSON.parse(value);
+          console.log(user.email);
+          if (user.email) {
+            navigation.navigate("Dashboard");
+          }
+          // value previously stored
+        }
+      } catch (e) {
+        console.log(e);
+        // error reading value
+      }
+    }
+    getData();
+  }, []);
 
   return (
     <View className="flex-row bg-[#4C7380] h-screen">
@@ -18,18 +38,24 @@ const SplashScreen = () => {
             Welcome to EnergyMate
           </Text>
           <Text className="text-white text-center text-lg px-3 w-80">
-            No matter how far you go,
-            Home will be your destination to return to.
-            let's make your home comfortable
+            No matter how far you go, Home will be your destination to return
+            to. let's make your home comfortable
           </Text>
-          <Image source={require("../assets/kid.png")} className="w-[396px] h-[260px] mb-6" />
+          <Image
+            source={require("../assets/kid.png")}
+            className="w-[396px] h-[260px] mb-6"
+          />
           <TouchableOpacity className="bg-[#e0e4e3] h-[48px] w-[300px] mt-8 rounded-lg flex justify-center">
-            <Text onPress={() => navigation.navigate("Signup")} className="text-center text-2xl font-bold text-[#4C7380]">Get Started</Text>
+            <Text
+              onPress={() => navigation.navigate("Signup")}
+              className="text-center text-2xl font-bold text-[#4C7380]"
+            >
+              Get Started
+            </Text>
           </TouchableOpacity>
         </View>
       </View>
     </View>
-
   );
 };
 
