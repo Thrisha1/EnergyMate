@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   ScrollView,
@@ -11,12 +11,33 @@ import { SafeAreaView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Signin from '../components/SignIn.jsx';
 import SignupComp from '../components/Signup.jsx';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Signup = () => {
+  const navigation = useNavigation();
+
+  useEffect(() => {
+    async function getData() {
+      try {
+        const value = await AsyncStorage.getItem("my-key");
+        if (value !== null) {
+          const user = JSON.parse(value);
+          console.log(user.email);
+          if (user.email) {
+            navigation.navigate("Dashboard");
+          }
+          // value previously stored
+        }
+      } catch (e) {
+        console.log(e);
+        // error reading value
+      }
+    }
+    getData();
+  }, []);
   const [email, setemail] = useState('');
   const [pswd, setpswd] = useState('');
   const [switcher, setswitcher] = useState(false);
-  const navigation = useNavigation();
 
   return (
     <ScrollView>
