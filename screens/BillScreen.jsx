@@ -74,8 +74,8 @@ const BillScreen = () => {
           />
         </View>
         <ScrollView className="bg-white">
-          {data.map((device) => (
-            <Device name={device.device_name} power={device.volt} toggle={device.isOn} userId={userid} />
+          {data?.map((device) => (
+            <Device name={device.device_name} power={device.units} toggle={device.isOn} userId={userid} deviceData={device} />
           ))}
         </ScrollView>
       </ScrollView>

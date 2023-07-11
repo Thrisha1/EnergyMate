@@ -14,33 +14,19 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import BackHandler from "../components/BackHandlers";
-// import {useDispatch, useSelector} from 'react-redux'
+import axios from "axios";
+import { useQuery } from "react-query";
+// import Chart from "../components/Chart";
 
 const DashboardScreen = () => {
-
-  async function getData() {
-    try {
-      const value = await AsyncStorage.getItem("my-key");
-      if (value !== null) {
-        console.log(value);
-        // value previously stored
-      }
-    } catch (e) {
-      console.log(e);
-      // error reading value
-    }
-  }
-
   const longText =
     "Small changes today, brighter future tomorrow. Save electricity, save the world.".repeat(
       50
     );
+  const navigation = useNavigation();
   const scrollX = useRef(new Animated.Value(0)).current;
   const scrollViewRef = useRef(null);
   const scrollDuration = 350000; // Adjust the duration for controlling the speed
-  const navigation = useNavigation();
-  // const dispatch = useDispatch()
-  // const {total_bill, power_consumption} = useSelector(state => state.dashboard)
 
   useEffect(() => {
     const textWidth = longText.length * 8; // Adjust the width calculation based on your text styling
@@ -60,8 +46,44 @@ const DashboardScreen = () => {
     };
 
     startScroll();
-    
   }, []);
+
+  async function getData() {
+    try {
+      const value = await AsyncStorage.getItem("my-key");
+      if (value !== null) {
+        //parse
+        const data = JSON.parse(value);
+        console.log(data._id);
+        return data._id;
+        // value previously stored
+      }
+    } catch (e) {
+      console.log(e);
+      // error reading value
+    }
+  }
+
+  const deviceDataGet = async () => {
+    const userValue = await getData();
+    const response = await fetch(`http://192.168.0.173:3001/device_details`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ userId: "64a5342bfaf4fd1ba73bbfd4" }),
+    });
+    const data = await response.json();
+    console.log("data is : " + JSON.stringify(data));
+    return data.data;
+  };
+  const { isLoading, error, data } = useQuery("deviceDataGet", deviceDataGet);
+  if (isLoading) {
+    return <Text>Loading...</Text>;
+  }
+  if (error) {
+    return <Text>Error: {error.message}</Text>;
+  }
 
   return (
     <>
@@ -78,13 +100,17 @@ const DashboardScreen = () => {
               <Text className="text-[#404040] text-xl text-center">
                 Your Total Bill
               </Text>
-              <Text className="text-[#404040] text-xl text-center">₹ 5000</Text>
+              <Text className="text-[#404040] text-xl text-center">
+                ₹{data ? data.total_bill.toFixed(3) : 0}
+              </Text>
             </View>
             <View className="flex-1">
               <Text className="text-[#404040] text-xl text-center">
                 Units Used
               </Text>
-              <Text className="text-[#404040] text-xl text-center">500</Text>
+              <Text className="text-[#404040] text-xl text-center">
+                {data ? data.total_units.toFixed(5) : 0}
+              </Text>
             </View>
           </View>
           {/* <TouchableOpacity className=" items-center flex-row justify-center">
@@ -97,7 +123,8 @@ const DashboardScreen = () => {
           </TouchableOpacity> */}
         </View>
         <TouchableOpacity onPress={() => getData()} className="my-7 px-6">
-          <Image source={require("../assets/graph.png")} className="" />
+          {/* <Image source={require("../assets/graph.png")} className="" /> */}
+          {/* <Chart Month_data={data?.AllDevices[0]?.monthly_unit} /> */}
         </TouchableOpacity>
         <View className="bg-[#76929b] h-40 opacity-75 rounded-xl items-center flex flex-col justify-center mx-5 p-7">
           <View className="flex-row justify-center items-center">

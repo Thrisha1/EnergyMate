@@ -7,7 +7,7 @@ import { useQuery } from "react-query";
 
 const DeviceDetailsScreen = ({ route }) => {
 
-  const { name, image, power, place } = route.params;
+  const { name, deviceData } = route.params;
 
   return (
     <>
@@ -15,7 +15,7 @@ const DeviceDetailsScreen = ({ route }) => {
       <View className="bg-[#4C7380] pt-12 px-7 pb-5 rounded-bl-full">
         
         <Text className="text-3xl text-center font-bold text-white">
-          {name}
+          {deviceData.device_name}
         </Text>
         <View className="flex-row w-full justify-between my-5">
         <View>
@@ -28,13 +28,13 @@ const DeviceDetailsScreen = ({ route }) => {
             <Text className="text-[#1d3e4a] font-bold text-2xl py-3">Usages</Text>
             <View className="flex-row w-full justify-between py-3">
                 <Text className="text-[#1d3e4a] text-lg">Use Today</Text>
-                <Text className="text-[#1d3e4a] text-lg">₹ 100</Text>
-                <Text className="text-[#1d3e4a] text-lg">50 Watt</Text>
+                {/* <Text className="text-[#1d3e4a] text-lg">₹ {deviceData.bill}</Text> */}
+                <Text className="text-[#1d3e4a] text-lg">{Number(deviceData.units).toFixed(5)} Watt</Text>
             </View>
             <View className="flex-row w-full justify-between">
                 <Text className="text-[#1d3e4a] text-lg">Use Month</Text>
-                <Text className="text-[#1d3e4a] text-lg">₹ 5000</Text>
-                <Text className="text-[#1d3e4a] text-lg">500 kwh</Text>
+                {/* <Text className="text-[#1d3e4a] text-lg">₹ {deviceData.bill}</Text> */}
+                <Text className="text-[#1d3e4a] text-lg">{Number(deviceData.units).toFixed(5)} kwh</Text>
             </View>
         </View>
       </View>

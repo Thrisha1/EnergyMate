@@ -2,7 +2,7 @@ import React, { useEffect, useLayoutEffect } from "react";
 import { View, Text, Image, StatusBar, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Logo from "../assets/logo.png";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const SplashScreen = () => {
   const navigation = useNavigation();
@@ -12,15 +12,16 @@ const SplashScreen = () => {
       try {
         const value = await AsyncStorage.getItem("my-key");
         if (value !== null) {
+          console.log("value is " + value);
           const user = JSON.parse(value);
-          console.log(user.email);
+          console.log(user.user.email);
           if (user.email) {
             navigation.navigate("Dashboard");
           }
           // value previously stored
         }
       } catch (e) {
-        console.log(e);
+        console.log("async error : " + e);
         // error reading value
       }
     }

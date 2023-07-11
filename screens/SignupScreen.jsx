@@ -29,7 +29,7 @@ const Signup = () => {
           // value previously stored
         }
       } catch (e) {
-        console.log(e);
+        console.log("error in async storage is : "+ e);
         // error reading value
       }
     }

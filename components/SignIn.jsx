@@ -10,11 +10,22 @@ import {
 import { SafeAreaView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import axios from "axios";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 
 const Signin = () => {
   const [email, setemail] = useState("");
   const [pswd, setpswd] = useState("");
   const navigation = useNavigation();
+
+  const storeData = async (value) => {
+    try {
+      await AsyncStorage.setItem('my-key', value);
+      console.log("setted value : " + value);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
     <View className="">
@@ -41,7 +52,8 @@ const Signin = () => {
               password: pswd,
             })
             .then((res) => {
-              console.log(res.data.message);
+              console.log(res.data);
+              storeData(JSON.stringify(res.data.user));
               navigation.navigate("Dashboard");
             })
 
