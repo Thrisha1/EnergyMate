@@ -122,28 +122,15 @@ const RegisterDevice = () => {
             <Text className="text-red-700">This field is required.</Text>
           )}
         </View>
-        {/* <View className="w-full my-2 flex-col space-y-2">
+        <View className="w-full my-2 flex-col space-y-2">
           <Text className="text-white text-xl font-semibold ">
-            No of Devices
+            Device Id
           </Text>
-          <Controller
-            control={control}
-            rules={{ required: true }}
-            render={({ field: { onChange, onBlur, value } }) => (
-              <TextInput
-                placeholder="No of Devices"
-                onBlur={onBlur}
-                onChangeText={onChange}
-                value={value}
-                className="bg-white rounded-lg px-2 py-2 w-full"
-              />
-            )}
-            name="qty"
+          <TextInput
+            placeholder="f-01187"
+            className="bg-white rounded-lg px-2 py-2 w-full"
           />
-          {errors.qty && (
-            <Text className="text-red-700">This field is required.</Text>
-          )}
-        </View> */}
+        </View>
         <View className="w-full flex-row justify-center mt-4">
           <TouchableOpacity
             onPress={handleSubmit(handleRegister)}

@@ -18,9 +18,9 @@ const Header = ({ heading }) => {
         <Text className="text-2xl text-white font-light">{heading}</Text>
       </View>
       <View className="flex-row items-center justify-center gap-x-3">
-        <Ionicons name="person" size={25} color="#fff" />
+        {/* <Ionicons name="person" size={25} color="#fff" /> */}
         <TouchableOpacity onPress={()=> logout()}>
-          <Ionicons name="notifications" size={25} color="#fff"></Ionicons>
+          <Ionicons name="power" size={25} color="#fff"></Ionicons>
         </TouchableOpacity>
       </View>
     </View>

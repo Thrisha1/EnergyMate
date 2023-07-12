@@ -14,7 +14,7 @@ const SplashScreen = () => {
         if (value !== null) {
           console.log("value is " + value);
           const user = JSON.parse(value);
-          console.log(user.user.email);
+          console.log(user.email);
           if (user.email) {
             navigation.navigate("Dashboard");
           }
